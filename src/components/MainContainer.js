@@ -8,8 +8,8 @@ function MainContainer() {
   const [ stockData, setStockData ] = useState([])
   const [ portfolio, setPortfolio] = useState([])
   const [filterType, setFilterType] = useState("")
-  // const [ sortType, setSortType ] = useState("")
-  // const [ sortOrder, setSortOrder] = useState("asc")
+  const [ sortType, setSortType ] = useState("")
+  const [ sortOrder, setSortOrder] = useState("asc")
 
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
@@ -23,7 +23,7 @@ function MainContainer() {
       <SearchBar setFilterType={setFilterType} setSortType={setSortType} setSortOrder={setSortOrder} />
       <div className="row">
         <div className="col-8">
-          <StockContainer stockData={stockData} portfolio={portfolio} setPortfolio={setPortfolio} filterType={filterType}/>
+          <StockContainer stockData={stockData} portfolio={portfolio} setPortfolio={setPortfolio} filterType={filterType} sortType={sortType}/>
         </div>
         <div className="col-4">
           <PortfolioContainer stockData={stockData} portfolio={portfolio} setPortfolio={setPortfolio}/>
