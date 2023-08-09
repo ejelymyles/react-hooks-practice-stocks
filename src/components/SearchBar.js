@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 
-function SearchBar() {
+function SearchBar({ setFilterType }) {
+
   return (
     <div>
       <strong>Sort by:</strong>
@@ -27,7 +28,7 @@ function SearchBar() {
       <br />
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={(e) => setFilterType(e.target.value)}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
